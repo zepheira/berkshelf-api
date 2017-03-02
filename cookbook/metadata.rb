@@ -8,7 +8,7 @@ maintainer_email "jamie@vialstudios.com"
 license          "Apache 2.0"
 description      "Installs/Configures a berkshelf-api server"
 long_description "Installs/Configures a berkshelf-api server"
-version          Berkshelf::API::VERSION
+version          "2.2.1"
 
 %w{ redhat centos ubuntu }.each do |os|
   supports os
