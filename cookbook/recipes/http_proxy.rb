@@ -19,10 +19,10 @@
 
 include_recipe "apt" if node["platform_family"] == "debian"
 node.force_default[:nginx][:install_method] = "source"
-include_recipe "nginx"
+include_recipe "chef_nginx::default"
 
 nginx_site "default" do
-  enable false
+  action :disable
 end
 
 template "#{node[:nginx][:dir]}/sites-available/berks-api" do
@@ -31,5 +31,5 @@ template "#{node[:nginx][:dir]}/sites-available/berks-api" do
 end
 
 nginx_site "berks-api" do
-  enable true
+  action :enable
 end
